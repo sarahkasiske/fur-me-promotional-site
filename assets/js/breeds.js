@@ -61,7 +61,7 @@ var dogBreeds = {
   },
   bassetHound: {
     breed: "Basset Hound",
-    description: "Description: Basset Hounds are friendly, loud, lovable dogs that are good with children and are relatively low-maintenance. Basset Hounds were originally bred to hunt small game and have excellent scenting skills. Despite their short legs they can move quickly so spending extra time on training or keeping them on a leash is essential.",
+     description: "Basset Hounds are friendly, loud, lovable dogs that are good with children and are relatively low-maintenance. Basset Hounds were originally bred to hunt small game and have excellent scenting skills. Despite their short legs they can move quickly so spending extra time on training or keeping them on a leash is essential.",
     characteristics:"Easygoing, friendly, gentle, calm, investigative, patient, stubborn",
     type: "Hound",
     size: "Medium",
@@ -90,7 +90,7 @@ var dogBreeds = {
   },
   beagle: {
     breed: "Beagle",
-    description: "Description: Beagles are an active breed, bred to hunt small game. They are extremely friendly, playful and affectionate and can be great family pets. Because of their strong instincts they can be difficult to train and are not very trustworthy off a leash. They are also a very vocal and have a tendency to bark or howl often.",
+     description: "Beagles are an active breed, bred to hunt small game. They are extremely friendly, playful and affectionate and can be great family pets. Because of their strong instincts they can be difficult to train and are not very trustworthy off a leash. They are also a very vocal and have a tendency to bark or howl often.",
     characteristics: "Loud, friendly, playful, determined, lively, active ",
     type: "Hound",
     size: "Medium",
@@ -119,7 +119,7 @@ var dogBreeds = {
   },
   berneseMountainDog: {
     breed: "Bernese Mountain Dog",
-    description: "Description: The Bernese Mountain Dog originated in Switzerland where it was bred as an all purpose farm dog. These large dogs tend to have relaxed and calm personalities lending them to be a popular family dog. Bernese Mountain dogs enjoy company and like to spend as much time with their family as possible.",
+     description: "The Bernese Mountain Dog originated in Switzerland where it was bred as an all purpose farm dog. These large dogs tend to have relaxed and calm personalities lending them to be a popular family dog. Bernese Mountain dogs enjoy company and like to spend as much time with their family as possible.",
     characteristics: "Friendly,calm, gentle, active, kind",
     type: "Working",
     size: "Large",
@@ -1498,6 +1498,8 @@ function list (array) {
 // List the dog breeds
 list(dogBreedArray);
 
+
+
 // Generates an image of a selected dog breed
 function breedImage() {
   document.querySelector("#breedImage").innerHTML ="";
@@ -1518,9 +1520,9 @@ function goBack(link, text) {
   back.setAttribute('href', link);
   // Create back arrow
   var backIcon= document.createElement("i");
-  backIcon.className = "fa fa-arrow-left";
+  backIcon.className = "fa fa-lg  fa-arrow-left";
   back.appendChild(backIcon)
-  var backText = document.createTextNode(" "+text);
+  var backText = document.createTextNode("  "+text);
   back.appendChild(backText);
   //add link to buttonContainer
   buttonContainer.appendChild(back);
@@ -1548,6 +1550,7 @@ function showBreed(event){
         // Display dog name, description and characteristics
         breedName.textContent = (dogBreeds[dogBreedArray[i]].breed);
         breedDescription.textContent = (dogBreeds[dogBreedArray[i]].description);
+
         breedCharacteristics.textContent = (dogBreeds[dogBreedArray[i]].characteristics);
         breedType.textContent = (dogBreeds[dogBreedArray[i]].type);
         breedSize.textContent = (dogBreeds[dogBreedArray[i]].size);
@@ -1619,20 +1622,18 @@ function starBuilder(id, rating) {
   while (i < 5) {
     while (i < rating) {
       var starImg = document.createElement("i");
-      starImg.className = "fa fa-star";
+      starImg.className = "fa fa-lg fa-star";
       p.appendChild(starImg)
       i++;
     };
     if(rating != 5){
     var starImg = document.createElement("i");
-    starImg.className = "fa fa-star-o";
+    starImg.className = "fa fa-lg fa-star-o";
     p.appendChild(starImg)
     i++;
     }
   }
 }
-
-
 
 // Checks if a breed is rare and then prints rare or not rare
 function rarityCheck(id, boolean) {
